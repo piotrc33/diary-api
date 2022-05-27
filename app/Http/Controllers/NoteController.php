@@ -15,17 +15,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Note::all();
     }
 
     /**
@@ -46,17 +36,6 @@ class NoteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Note $note)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Note  $note
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Note $note)
     {
         //
     }
