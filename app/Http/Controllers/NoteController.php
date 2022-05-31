@@ -26,7 +26,7 @@ class NoteController extends Controller
      */
     public function store(StoreNoteRequest $request)
     {
-        //
+        return Note::create($request->validated());
     }
 
     /**
@@ -37,7 +37,7 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        //
+        return $note;
     }
 
     /**
@@ -49,7 +49,8 @@ class NoteController extends Controller
      */
     public function update(UpdateNoteRequest $request, Note $note)
     {
-        //
+        $note->update($request->validated());
+        return $note;
     }
 
     /**
@@ -60,6 +61,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return response()->json(null, 204);
     }
 }
